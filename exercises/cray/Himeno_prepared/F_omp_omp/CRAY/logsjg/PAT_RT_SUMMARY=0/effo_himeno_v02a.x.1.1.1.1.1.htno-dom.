@@ -1,0 +1,127 @@
+# -----------------------------------------------
+# core file size          (blocks, -c) unlimited
+# data seg size           (kbytes, -d) unlimited
+# scheduling priority             (-e) 0
+# file size               (blocks, -f) unlimited
+# pending signals                 (-i) 255072
+# max locked memory       (kbytes, -l) unlimited
+# max memory size         (kbytes, -m) 65986560
+# open files                      (-n) 1048560
+# pipe size            (512 bytes, -p) 8
+# POSIX message queues     (bytes, -q) 819200
+# real-time priority              (-r) 0
+# stack size              (kbytes, -s) unlimited
+# cpu time               (seconds, -t) unlimited
+# max user processes              (-u) 255072
+# virtual memory          (kbytes, -v) unlimited
+# file locks                      (-x) unlimited
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_JOB_NODELIST = nid00001
+# SLURM_JOB_NUM_NODES = 1
+# SLURM_JOB_ID = 650044
+# SLURM_JOBID = 650044
+# SLURM_NTASKS = 1 / -n --ntasks
+# SLURM_NTASKS_PER_NODE = 1 / -N --ntasks-per-node
+# SLURM_CPUS_PER_TASK = 1 / -d-c --cpus-per-task
+# OMP_NUM_THREADS = 1 / -d-c 
+# SLURM_NTASKS_PER_CORE = 1 / -j1 --ntasks-per-core
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_CPUS_ON_NODE = 24
+# SLURM_LOCALID = 0
+# SLURM_NNODES = 1
+# SLURM_NODEID = 0
+# SLURM_PROCID = 0
+# SLURM_NPROCS = 1
+# SLURM_OVERCOMMIT = 
+# nodeid:0 taskid:0 localid:0
+# 
+# -----------------------------------------------
+Sat Dec  2 14:42:35 CET 2017
+warning: no --cpu_bind=rank
++ echo CRAY_CUDA_MPS=
+CRAY_CUDA_MPS=
++ echo HUGETLB_DEFAULT_PAGE_SIZE=
+HUGETLB_DEFAULT_PAGE_SIZE=
++ echo HUGETLB_MORECORE=
+HUGETLB_MORECORE=
++ export TMPDIR=/tmp
++ TMPDIR=/tmp
++ echo TMPDIR=/tmp
+TMPDIR=/tmp
++ srun --unbuffered --ntasks=1 --ntasks-per-node=1 --cpus-per-task=1 --ntasks-per-core=1 --cpu_bind=verbose --hint=nomultithread ./himeno_v02a.x
+cpu_bind=MASK - nid00001, task  0  0 [8278]: mask 0x1 set
+[CCE OMP: host=nid00001 pid=8278 tid=8278 id=0] thread 0 affinity:  0
+CrayPat/X:  Version 6.5.2 Revision ba33e9b  08/22/17 16:05:58
+ 
+ Double precision
+ 
+ PROBLEM_SIZE :  3
+   mimax =  257  mjmax =  129  mkmax =  129
+   imax =  256  jmax =  128  kmax =  128
+ 
+ Using OpenMP
+   OMP_NUM_THREADS :  1
+ 
+ Iterations  :  3
+ Time (secs) :  0.36478334601270035
+ Gosa       : 0.169217378263104021E-02 
+ MFLOPS      :  1127.5608179373398
+ 
+ Iterations  :  100
+ Time (secs) :  0.19476843561278656
+ Gosa       : 0.137835972438398943E-02 
+ MFLOPS      :  70393.919614662154
+ Score based on Pentium III 600MHz : 849.75760037013697
+
+#################################################################
+#                                                               #
+#            CrayPat-lite Performance Statistics                #
+#                                                               #
+#################################################################
+
+CrayPat/X:  Version 6.5.2 Revision ba33e9b  08/22/17 16:05:58
+Experiment:                  lite  lite/gpu
+Number of PEs (MPI ranks):      1
+Numbers of PEs per Node:        1
+Numbers of Threads per PE:      3
+Number of Cores per Socket:    12
+Execution start time:  Sat Dec  2 14:42:36 2017
+System name and speed:  nid00001  2601 MHz (approx)
+Intel Haswell CPU  Family:  6  Model: 63  Stepping:  2
+
+
+Avg Process Time:  1.02 secs         
+High Memory:      545.8 MBytes 545.8 MBytes per PE
+
+Table 1:  Accelerator Table by Function (top 10 functions shown)
+
+   Host | Host |  Acc | Acc Copy | Acc Copy | Events | Function=[max10]
+  Time% | Time | Time |       In |      Out |        |  PE=HIDE
+        |      |      | (MBytes) | (MBytes) |        |   Thread=HIDE
+       
+ 100.0% | 0.01 | 0.40 |   848.35 |    65.26 |    729 | Total
+|-----------------------------------------------------------------------------
+|  52.3% | 0.00 | 0.00 |   424.18 |    32.63 |      2 | jacobi__clone_1570_1512222149_1_.ACC_COPY@li.157
+|  26.5% | 0.00 | 0.03 |     0.00 |     0.00 |     21 | jacobi__clone_1570_1512222149_1_
+|  17.1% | 0.00 | 0.37 |       -- |     0.00 |    700 | jacobi__clone_1570_1512222149_2_
+|   3.0% | 0.00 |   -- |       -- |       -- |      1 | jacobi__clone_1570_1512222149_1_.ACC_DATA_REGION@li.157
+|=============================================================================
+
+Program invocation:
+  /apps/common/UES/sandbox/jgp/openacc-training.gitjg/exercises/cray/Himeno_prepared/F_omp_omp/CRAY/./himeno_v02a.x
+
+For a complete report with expanded tables and notes, run:
+  pat_report /scratch/snx1600tds/piccinal/himeno/himeno_v02a.x+8278-1t
+
+For help identifying callers of particular functions:
+  pat_report -O callers+src /scratch/snx1600tds/piccinal/himeno/himeno_v02a.x+8278-1t
+To see the entire call tree:
+  pat_report -O calltree+src /scratch/snx1600tds/piccinal/himeno/himeno_v02a.x+8278-1t
+
+For interactive, graphical performance analysis, run:
+  app2 /scratch/snx1600tds/piccinal/himeno/himeno_v02a.x+8278-1t
+
+================  End of CrayPat-lite output  ==========================
++ set +x

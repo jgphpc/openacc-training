@@ -1,0 +1,1512 @@
+# -----------------------------------------------
+# core file size          (blocks, -c) unlimited
+# data seg size           (kbytes, -d) unlimited
+# scheduling priority             (-e) 0
+# file size               (blocks, -f) unlimited
+# pending signals                 (-i) 255072
+# max locked memory       (kbytes, -l) unlimited
+# max memory size         (kbytes, -m) 65986560
+# open files                      (-n) 1048560
+# pipe size            (512 bytes, -p) 8
+# POSIX message queues     (bytes, -q) 819200
+# real-time priority              (-r) 0
+# stack size              (kbytes, -s) unlimited
+# cpu time               (seconds, -t) unlimited
+# max user processes              (-u) 255072
+# virtual memory          (kbytes, -v) unlimited
+# file locks                      (-x) unlimited
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_JOB_NODELIST = nid00000
+# SLURM_JOB_NUM_NODES = 1
+# SLURM_JOB_ID = 650031
+# SLURM_JOBID = 650031
+# SLURM_NTASKS = 1 / -n --ntasks
+# SLURM_NTASKS_PER_NODE = 1 / -N --ntasks-per-node
+# SLURM_CPUS_PER_TASK = 1 / -d-c --cpus-per-task
+# OMP_NUM_THREADS = 1 / -d-c 
+# SLURM_NTASKS_PER_CORE = 1 / -j1 --ntasks-per-core
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_CPUS_ON_NODE = 24
+# SLURM_LOCALID = 0
+# SLURM_NNODES = 1
+# SLURM_NODEID = 0
+# SLURM_PROCID = 0
+# SLURM_NPROCS = 1
+# SLURM_OVERCOMMIT = 
+# nodeid:0 taskid:0 localid:0
+# 
+# -----------------------------------------------
+Sat Dec  2 14:21:17 CET 2017
+warning: no --cpu_bind=rank
++ echo CRAY_CUDA_MPS=
+CRAY_CUDA_MPS=
++ echo HUGETLB_DEFAULT_PAGE_SIZE=
+HUGETLB_DEFAULT_PAGE_SIZE=
++ echo HUGETLB_MORECORE=
+HUGETLB_MORECORE=
++ export TMPDIR=/tmp
++ TMPDIR=/tmp
++ echo TMPDIR=/tmp
+TMPDIR=/tmp
++ srun --unbuffered --ntasks=1 --ntasks-per-node=1 --cpus-per-task=1 --ntasks-per-core=1 --cpu_bind=verbose --hint=nomultithread ./himeno_v03.x
+cpu_bind=MASK - nid00000, task  0  0 [14520]: mask 0x1 set
+[CCE OMP: host=nid00000 pid=14520 tid=14520 id=0] thread 0 affinity:  0
+ACC: Initialize CUDA
+ACC: Get Device 0
+ACC: Create Context
+ACC: Set Thread Context
+ACC: Start transfer 7 items from himeno_F_v03.F90:116
+ACC:       allocate 'a' (136855584 bytes)
+ACC:       allocate 'b' (102641688 bytes)
+ACC:       allocate 'bnd' (34213896 bytes)
+ACC:       allocate 'c' (102641688 bytes)
+ACC:       allocate 'p' (34213896 bytes)
+ACC:       allocate 'wrk1' (34213896 bytes)
+ACC:       allocate 'wrk2' (34213896 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Start transfer 6 items from himeno_F_v03.F90:208
+ACC:       present 'a' (136855584 bytes)
+ACC:       present 'b' (102641688 bytes)
+ACC:       present 'bnd' (34213896 bytes)
+ACC:       present 'c' (102641688 bytes)
+ACC:       present 'p' (34213896 bytes)
+ACC:       present 'wrk1' (34213896 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel initmt_$ck_L208_17 blocks:129 threads:128 async(auto) from himeno_F_v03.F90:208
+ACC: Wait async(auto) from himeno_F_v03.F90:228
+ACC: Start transfer 6 items from himeno_F_v03.F90:228
+ACC:       release present 'a' (136855584 bytes)
+ACC:       release present 'b' (102641688 bytes)
+ACC:       release present 'bnd' (34213896 bytes)
+ACC:       release present 'c' (102641688 bytes)
+ACC:       release present 'p' (34213896 bytes)
+ACC:       release present 'wrk1' (34213896 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Start transfer 6 items from himeno_F_v03.F90:230
+ACC:       present 'a' (136855584 bytes)
+ACC:       present 'b' (102641688 bytes)
+ACC:       present 'bnd' (34213896 bytes)
+ACC:       present 'c' (102641688 bytes)
+ACC:       present 'p' (34213896 bytes)
+ACC:       present 'wrk1' (34213896 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel initmt_$ck_L230_19 blocks:128 threads:128 async(auto) from himeno_F_v03.F90:230
+ACC: Wait async(auto) from himeno_F_v03.F90:250
+ACC: Start transfer 6 items from himeno_F_v03.F90:250
+ACC:       release present 'a' (136855584 bytes)
+ACC:       release present 'b' (102641688 bytes)
+ACC:       release present 'bnd' (34213896 bytes)
+ACC:       release present 'c' (102641688 bytes)
+ACC:       release present 'p' (34213896 bytes)
+ACC:       release present 'wrk1' (34213896 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ 
+ Double precision
+ 
+ PROBLEM_SIZE :  3
+   mimax =  257  mjmax =  129  mkmax =  129
+   imax =  256  jmax =  128  kmax =  128
+ 
+ Using OpenMP
+   OMP_NUM_THREADS :  1
+ACC: Start transfer 7 items from himeno_F_v03.F90:157
+ACC:       present 'a' (136855584 bytes)
+ACC:       present 'b' (102641688 bytes)
+ACC:       present 'bnd' (34213896 bytes)
+ACC:       present 'c' (102641688 bytes)
+ACC:       present 'p' (34213896 bytes)
+ACC:       present 'wrk1' (34213896 bytes)
+ACC:       present 'wrk2' (34213896 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Start transfer 3 items from himeno_F_v03.F90:157
+ACC:       allocate reusable <internal> (8 bytes)
+ACC:       allocate reusable, copy to acc <internal> (4 bytes)
+ACC:       allocate reusable <internal> (1008 bytes)
+ACC: End transfer (to acc 4 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_1_$ck_L157_3 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:157
+ACC: Wait async(auto) from himeno_F_v03.F90:157
+ACC: Start transfer 3 items from himeno_F_v03.F90:157
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_1_$ck_L157_5 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:157
+ACC: Start transfer 3 items from himeno_F_v03.F90:157
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_1_$ck_L157_3 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:157
+ACC: Wait async(auto) from himeno_F_v03.F90:157
+ACC: Start transfer 3 items from himeno_F_v03.F90:157
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_1_$ck_L157_5 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:157
+ACC: Start transfer 3 items from himeno_F_v03.F90:157
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_1_$ck_L157_3 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:157
+ACC: Wait async(auto) from himeno_F_v03.F90:157
+ACC: Start transfer 3 items from himeno_F_v03.F90:157
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_1_$ck_L157_5 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:157
+ACC: Wait async(auto) from himeno_F_v03.F90:157
+ACC: Start transfer 7 items from himeno_F_v03.F90:157
+ACC:       release present 'a' (136855584 bytes)
+ACC:       release present 'b' (102641688 bytes)
+ACC:       release present 'bnd' (34213896 bytes)
+ACC:       release present 'c' (102641688 bytes)
+ACC:       release present 'p' (34213896 bytes)
+ACC:       release present 'wrk1' (34213896 bytes)
+ACC:       release present 'wrk2' (34213896 bytes)
+ 
+ Iterations  :  3
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ Time (secs) :  5.35637064604088664E-3
+ Gosa       : 0.169217378263104021E-02 
+ MFLOPS      :  76789.945128987689
+ACC: Start transfer 7 items from himeno_F_v03.F90:178
+ACC:       present 'a' (136855584 bytes)
+ACC:       present 'b' (102641688 bytes)
+ACC:       present 'bnd' (34213896 bytes)
+ACC:       present 'c' (102641688 bytes)
+ACC:       present 'p' (34213896 bytes)
+ACC:       present 'wrk1' (34213896 bytes)
+ACC:       present 'wrk2' (34213896 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       reusable acquired <internal> (8 bytes)
+ACC:       reusable acquired <internal> (4 bytes)
+ACC:       reusable acquired <internal> (1008 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_10 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 3 items from himeno_F_v03.F90:178
+ACC:       copy to host, done reusable <internal> (8 bytes)
+ACC:       done reusable <internal> (4 bytes)
+ACC:       done reusable <internal> (0 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: Execute kernel jacobi__clone_141610_1512220841_2_$ck_L178_12 blocks:126 threads:128 async(auto) from himeno_F_v03.F90:178
+ACC: Wait async(auto) from himeno_F_v03.F90:178
+ACC: Start transfer 7 items from himeno_F_v03.F90:178
+ACC:       release present 'a' (136855584 bytes)
+ACC:       release present 'b' (102641688 bytes)
+ACC:       release present 'bnd' (34213896 bytes)
+ACC:       release present 'c' (102641688 bytes)
+ 
+ Iterations  :  100
+ Time (secs) :  0.14406740985577926
+ Gosa       : 0.137835972438398943E-02 
+ MFLOPS      :  95167.349879650807
+ Score based on Pentium III 600MHz : 1148.8091487162096
+ACC:       release present 'p' (34213896 bytes)
+ACC:       release present 'wrk1' (34213896 bytes)
+ACC:       release present 'wrk2' (34213896 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
+ACC: Wait async(auto) from himeno_F_v03.F90:193
+ACC: Start transfer 7 items from himeno_F_v03.F90:193
+ACC:       free 'a' (136855584 bytes)
+ACC:       free 'b' (102641688 bytes)
+ACC:       free 'bnd' (34213896 bytes)
+ACC:       free 'c' (102641688 bytes)
+ACC:       free 'p' (34213896 bytes)
+ACC:       free 'wrk1' (34213896 bytes)
+ACC:       free 'wrk2' (34213896 bytes)
+ACC: End transfer (to acc 0 bytes, to host 0 bytes)
++ set +x

@@ -1,0 +1,131 @@
+# -----------------------------------------------
+# core file size          (blocks, -c) unlimited
+# data seg size           (kbytes, -d) unlimited
+# scheduling priority             (-e) 0
+# file size               (blocks, -f) unlimited
+# pending signals                 (-i) 255072
+# max locked memory       (kbytes, -l) unlimited
+# max memory size         (kbytes, -m) 65986560
+# open files                      (-n) 1048560
+# pipe size            (512 bytes, -p) 8
+# POSIX message queues     (bytes, -q) 819200
+# real-time priority              (-r) 0
+# stack size              (kbytes, -s) unlimited
+# cpu time               (seconds, -t) unlimited
+# max user processes              (-u) 255072
+# virtual memory          (kbytes, -v) unlimited
+# file locks                      (-x) unlimited
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_JOB_NODELIST = nid00000
+# SLURM_JOB_NUM_NODES = 1
+# SLURM_JOB_ID = 650014
+# SLURM_JOBID = 650014
+# SLURM_NTASKS = 1 / -n --ntasks
+# SLURM_NTASKS_PER_NODE = 1 / -N --ntasks-per-node
+# SLURM_CPUS_PER_TASK = 8 / -d-c --cpus-per-task
+# OMP_NUM_THREADS = 8 / -d-c 
+# SLURM_NTASKS_PER_CORE = 1 / -j1 --ntasks-per-core
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_CPUS_ON_NODE = 24
+# SLURM_LOCALID = 0
+# SLURM_NNODES = 1
+# SLURM_NODEID = 0
+# SLURM_PROCID = 0
+# SLURM_NPROCS = 1
+# SLURM_OVERCOMMIT = 
+# nodeid:0 taskid:0 localid:0
+# 
+# -----------------------------------------------
+Sat Dec  2 13:44:38 CET 2017
+warning: no --cpu_bind=rank
++ echo CRAY_CUDA_MPS=
+CRAY_CUDA_MPS=
++ echo HUGETLB_DEFAULT_PAGE_SIZE=
+HUGETLB_DEFAULT_PAGE_SIZE=
++ echo HUGETLB_MORECORE=
+HUGETLB_MORECORE=
++ export TMPDIR=/tmp
++ TMPDIR=/tmp
++ echo TMPDIR=/tmp
+TMPDIR=/tmp
++ srun --unbuffered --ntasks=1 --ntasks-per-node=1 --cpus-per-task=8 --ntasks-per-core=1 --cpu_bind=verbose --hint=nomultithread ./himeno_v00.x
+cpu_bind=MASK - nid00000, task  0  0 [31379]: mask 0xff set
+[CCE OMP: host=nid00000 pid=31379 tid=31379 id=0] thread 0 affinity:  0-7
+CrayPat/X:  Version 6.5.2 Revision ba33e9b  08/22/17 16:05:58
+PGO data version:  L.14.1:B.3.1
+ 
+ Double precision
+ 
+ PROBLEM_SIZE :  3
+   mimax =  257  mjmax =  129  mkmax =  129
+   imax =  256  jmax =  128  kmax =  128
+ 
+ Iterations  :  3
+ Time (secs) :  0.11200248904060572
+ Gosa       : 0.169217378263118853E-02 
+ MFLOPS      :  3672.3773866389738
+ 
+ Iterations  :  100
+ Time (secs) :  3.4583623775397427
+ Gosa       : 0.137835972438413211E-02 
+ MFLOPS      :  3964.4525654808831
+ Score based on Pentium III 600MHz : 47.856742702569804
+
+#################################################################
+#                                                               #
+#            CrayPat-lite Performance Statistics                #
+#                                                               #
+#################################################################
+
+CrayPat/X:  Version 6.5.2 Revision ba33e9b  08/22/17 16:05:58
+Experiment:                  lite  lite/loop_profile
+Number of PEs (MPI ranks):      1
+Numbers of PEs per Node:        1
+Numbers of Threads per PE:      1
+Number of Cores per Socket:    12
+Execution start time:  Sat Dec  2 13:44:39 2017
+System name and speed:  nid00000  2601 MHz (approx)
+Intel Haswell CPU  Family:  6  Model: 63  Stepping:  2
+
+
+Avg Process Time:  3.76 secs         
+High Memory:      507.2 MBytes 507.2 MBytes per PE
+
+Table 1:  Inclusive and Exclusive Time in Loops (from -hprofile_generate)
+
+  Loop |     Loop |     Time |  Loop Hit |  Loop |  Loop |  Loop | Function=/.LOOP[.]
+  Incl |     Incl |    (Loop |           | Trips | Trips | Trips | 
+ Time% |     Time |    Adj.) |           |   Avg |   Min |   Max | 
+|-----------------------------------------------------------------------------
+| 95.9% | 3.571758 | 0.000023 |         2 |  51.5 |     3 |   100 | jacobi_.LOOP.1.li.280
+| 82.5% | 3.073851 | 0.000509 |       103 | 126.0 |   126 |   126 | jacobi_.LOOP.2.li.291
+| 82.5% | 3.073342 | 0.038660 |    12,978 | 126.0 |   126 |   126 | jacobi_.LOOP.3.li.292
+| 81.5% | 3.034683 | 3.034683 | 1,635,228 | 254.0 |   254 |   254 | jacobi_.LOOP.4.li.293
+| 13.4% | 0.497884 | 0.000373 |       103 | 126.0 |   126 |   126 | jacobi_.LOOP.5.li.319
+| 13.4% | 0.497511 | 0.017346 |    12,978 | 126.0 |   126 |   126 | jacobi_.LOOP.6.li.320
+| 12.9% | 0.480166 | 0.480166 | 1,635,228 | 254.0 |   254 |   254 | jacobi_.LOOP.7.li.321
+|  3.0% | 0.110297 | 0.000003 |         1 | 129.0 |   129 |   129 | initmt_.LOOP.1.li.212
+|  3.0% | 0.110295 | 0.000234 |       129 | 129.0 |   129 |   129 | initmt_.LOOP.2.li.213
+|  3.0% | 0.110061 | 0.110061 |    16,641 | 257.0 |   257 |   257 | initmt_.LOOP.3.li.214
+|  1.0% | 0.036313 | 0.000618 |         1 | 128.0 |   128 |   128 | initmt_.LOOP.4.li.235
+|  1.0% | 0.035695 | 0.000872 |       128 | 128.0 |   128 |   128 | initmt_.LOOP.5.li.236
+|=============================================================================
+
+Program invocation:
+  /apps/common/UES/sandbox/jgp/openacc-training.gitjg/exercises/cray/Himeno_prepared/F_omp_omp/CRAY/./himeno_v00.x
+
+For a complete report with expanded tables and notes, run:
+  pat_report /scratch/snx1600tds/piccinal/himeno/himeno_v00.x+31379-0t
+
+For help identifying callers of particular functions:
+  pat_report -O callers+src /scratch/snx1600tds/piccinal/himeno/himeno_v00.x+31379-0t
+To see the entire call tree:
+  pat_report -O calltree+src /scratch/snx1600tds/piccinal/himeno/himeno_v00.x+31379-0t
+
+For interactive, graphical performance analysis, run:
+  app2 /scratch/snx1600tds/piccinal/himeno/himeno_v00.x+31379-0t
+
+================  End of CrayPat-lite output  ==========================
++ set +x

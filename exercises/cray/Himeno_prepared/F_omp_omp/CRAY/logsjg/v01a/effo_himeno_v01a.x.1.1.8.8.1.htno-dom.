@@ -1,0 +1,83 @@
+# -----------------------------------------------
+# core file size          (blocks, -c) unlimited
+# data seg size           (kbytes, -d) unlimited
+# scheduling priority             (-e) 0
+# file size               (blocks, -f) unlimited
+# pending signals                 (-i) 255072
+# max locked memory       (kbytes, -l) unlimited
+# max memory size         (kbytes, -m) 65986560
+# open files                      (-n) 1048560
+# pipe size            (512 bytes, -p) 8
+# POSIX message queues     (bytes, -q) 819200
+# real-time priority              (-r) 0
+# stack size              (kbytes, -s) unlimited
+# cpu time               (seconds, -t) unlimited
+# max user processes              (-u) 255072
+# virtual memory          (kbytes, -v) unlimited
+# file locks                      (-x) unlimited
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_JOB_NODELIST = nid00000
+# SLURM_JOB_NUM_NODES = 1
+# SLURM_JOB_ID = 650017
+# SLURM_JOBID = 650017
+# SLURM_NTASKS = 1 / -n --ntasks
+# SLURM_NTASKS_PER_NODE = 1 / -N --ntasks-per-node
+# SLURM_CPUS_PER_TASK = 8 / -d-c --cpus-per-task
+# OMP_NUM_THREADS = 8 / -d-c 
+# SLURM_NTASKS_PER_CORE = 1 / -j1 --ntasks-per-core
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_CPUS_ON_NODE = 24
+# SLURM_LOCALID = 0
+# SLURM_NNODES = 1
+# SLURM_NODEID = 0
+# SLURM_PROCID = 0
+# SLURM_NPROCS = 1
+# SLURM_OVERCOMMIT = 
+# nodeid:0 taskid:0 localid:0
+# 
+# -----------------------------------------------
+Sat Dec  2 13:57:13 CET 2017
+warning: no --cpu_bind=rank
++ echo CRAY_CUDA_MPS=
+CRAY_CUDA_MPS=
++ echo HUGETLB_DEFAULT_PAGE_SIZE=
+HUGETLB_DEFAULT_PAGE_SIZE=
++ echo HUGETLB_MORECORE=
+HUGETLB_MORECORE=
++ export TMPDIR=/tmp
++ TMPDIR=/tmp
++ echo TMPDIR=/tmp
+TMPDIR=/tmp
++ srun --unbuffered --ntasks=1 --ntasks-per-node=1 --cpus-per-task=8 --ntasks-per-core=1 --cpu_bind=verbose --hint=nomultithread ./himeno_v01a.x
+cpu_bind=MASK - nid00000, task  0  0 [3049]: mask 0xff set
+[CCE OMP: host=nid00000 pid=3049 tid=3049 id=0] thread 0 affinity:  0-7
+[CCE OMP: host=nid00000 pid=3049 tid=3057 id=0] thread 3 affinity:  0-7
+[CCE OMP: host=nid00000 pid=3049 tid=3055 id=0] thread 1 affinity:  0-7
+[CCE OMP: host=nid00000 pid=3049 tid=3056 id=0] thread 2 affinity:  0-7
+[CCE OMP: host=nid00000 pid=3049 tid=3058 id=0] thread 4 affinity:  0-7
+[CCE OMP: host=nid00000 pid=3049 tid=3059 id=0] thread 5 affinity:  0-7
+[CCE OMP: host=nid00000 pid=3049 tid=3061 id=0] thread 7 affinity:  0-7
+[CCE OMP: host=nid00000 pid=3049 tid=3060 id=0] thread 6 affinity:  0-7
+ 
+ Double precision
+ 
+ PROBLEM_SIZE :  3
+   mimax =  257  mjmax =  129  mkmax =  129
+   imax =  256  jmax =  128  kmax =  128
+ 
+ Using OpenMP
+   OMP_NUM_THREADS :  8
+ 
+ Iterations  :  3
+ Time (secs) :  1.2980301095522009
+ Gosa       : 0.819786585344274317E+04 
+ MFLOPS      :  316.87663096035345
+ 
+ Iterations  :  100
+ Time (secs) :  38.587709609768353
+ Gosa       : 0.348158249449381856E+02 
+ MFLOPS      :  355.30778423110212
+ Score based on Pentium III 600MHz : 4.2890847927462827
++ set +x

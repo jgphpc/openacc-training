@@ -34,7 +34,9 @@ ifeq ($(PE_ENV),CRAY)
 ifneq ($(OMP),yes)
   ifneq ($(OMP_DEV),yes)
   FFLAGS += -hnoomp 
-endif
+  endif
+else
+  FFLAGS += -homp 
 endif
 
  ifneq ($(ACC),yes)

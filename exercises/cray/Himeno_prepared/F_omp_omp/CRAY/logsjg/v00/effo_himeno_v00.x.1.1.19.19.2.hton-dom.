@@ -1,0 +1,94 @@
+# -----------------------------------------------
+# core file size          (blocks, -c) unlimited
+# data seg size           (kbytes, -d) unlimited
+# scheduling priority             (-e) 0
+# file size               (blocks, -f) unlimited
+# pending signals                 (-i) 255072
+# max locked memory       (kbytes, -l) unlimited
+# max memory size         (kbytes, -m) 65986560
+# open files                      (-n) 1048560
+# pipe size            (512 bytes, -p) 8
+# POSIX message queues     (bytes, -q) 819200
+# real-time priority              (-r) 0
+# stack size              (kbytes, -s) unlimited
+# cpu time               (seconds, -t) unlimited
+# max user processes              (-u) 255072
+# virtual memory          (kbytes, -v) unlimited
+# file locks                      (-x) unlimited
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_JOB_NODELIST = nid00006
+# SLURM_JOB_NUM_NODES = 1
+# SLURM_JOB_ID = 650006
+# SLURM_JOBID = 650006
+# SLURM_NTASKS = 1 / -n --ntasks
+# SLURM_NTASKS_PER_NODE = 1 / -N --ntasks-per-node
+# SLURM_CPUS_PER_TASK = 19 / -d-c --cpus-per-task
+# OMP_NUM_THREADS = 19 / -d-c 
+# SLURM_NTASKS_PER_CORE = 2 / -j1 --ntasks-per-core
+# -----------------------------------------------
+# -----------------------------------------------
+# SLURM_CPUS_ON_NODE = 24
+# SLURM_LOCALID = 0
+# SLURM_NNODES = 1
+# SLURM_NODEID = 0
+# SLURM_PROCID = 0
+# SLURM_NPROCS = 1
+# SLURM_OVERCOMMIT = 
+# nodeid:0 taskid:0 localid:0
+# 
+# -----------------------------------------------
+Sat Dec  2 13:30:42 CET 2017
+warning: no --cpu_bind=rank
++ echo CRAY_CUDA_MPS=
+CRAY_CUDA_MPS=
++ echo HUGETLB_DEFAULT_PAGE_SIZE=
+HUGETLB_DEFAULT_PAGE_SIZE=
++ echo HUGETLB_MORECORE=
+HUGETLB_MORECORE=
++ export TMPDIR=/tmp
++ TMPDIR=/tmp
++ echo TMPDIR=/tmp
+TMPDIR=/tmp
++ srun --unbuffered --ntasks=1 --ntasks-per-node=1 --cpus-per-task=19 --ntasks-per-core=2 --cpu_bind=verbose --hint=multithread ./himeno_v00.x
+cpu_bind=MASK - nid00006, task  0  0 [30637]: mask 0x1ff3ff set
+[CCE OMP: host=nid00006 pid=30637 tid=30637 id=0] thread 0 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30643 id=0] thread 1 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30644 id=0] thread 2 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30645 id=0] thread 3 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30646 id=0] thread 4 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30648 id=0] thread 6 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30647 id=0] thread 5 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30649 id=0] thread 7 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30651 id=0] thread 9 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30650 id=0] thread 8 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30652 id=0] thread 10 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30653 id=0] thread 11 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30654 id=0] thread 12 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30655 id=0] thread 13 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30656 id=0] thread 14 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30657 id=0] thread 15 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30659 id=0] thread 17 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30660 id=0] thread 18 affinity:  0-9 12-20
+[CCE OMP: host=nid00006 pid=30637 tid=30658 id=0] thread 16 affinity:  0-9 12-20
+ 
+ Double precision
+ 
+ PROBLEM_SIZE :  3
+   mimax =  257  mjmax =  129  mkmax =  129
+   imax =  256  jmax =  128  kmax =  128
+ 
+ Using OpenMP
+   OMP_NUM_THREADS :  19
+ 
+ Iterations  :  3
+ Time (secs) :  6.69559750240296125E-2
+ Gosa       : 0.169217378263127722E-02 
+ MFLOPS      :  6143.0724868450397
+ 
+ Iterations  :  100
+ Time (secs) :  1.1953866904950701
+ Gosa       : 0.137835972438397339E-02 
+ MFLOPS      :  11469.521711273013
+ Score based on Pentium III 600MHz : 138.4539076686747
++ set +x

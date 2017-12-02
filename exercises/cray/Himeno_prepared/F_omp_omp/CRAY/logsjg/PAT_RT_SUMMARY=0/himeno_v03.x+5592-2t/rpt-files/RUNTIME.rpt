@@ -1,0 +1,53 @@
+
+#################################################################
+#                                                               #
+#            CrayPat-lite Performance Statistics                #
+#                                                               #
+#################################################################
+
+CrayPat/X:  Version 6.5.2 Revision ba33e9b  08/22/17 16:05:58
+Experiment:                  lite  lite/gpu
+Number of PEs (MPI ranks):      1
+Numbers of PEs per Node:        1
+Numbers of Threads per PE:      3
+Number of Cores per Socket:    12
+Execution start time:  Sat Dec  2 14:42:35 2017
+System name and speed:  nid00002  2601 MHz (approx)
+Intel Haswell CPU  Family:  6  Model: 63  Stepping:  2
+
+
+Avg Process Time:  0.78 secs         
+High Memory:      121.4 MBytes 121.4 MBytes per PE
+
+Table 1:  Accelerator Table by Function (top 10 functions shown)
+
+   Host | Host |  Acc | Acc Copy | Acc Copy | Events | Function=[max10]
+  Time% | Time | Time |       In |      Out |        |  PE=HIDE
+        |      |      | (MBytes) | (MBytes) |        |   Thread=HIDE
+       
+ 100.0% | 0.01 | 0.41 |     0.00 |     0.00 |    743 | Total
+|-----------------------------------------------------------------------------
+|  49.4% | 0.01 |   -- |       -- |       -- |      1 | main_.ACC_DATA_REGION@li.116
+|  23.2% | 0.00 | 0.00 |       -- |       -- |      1 | main_.ACC_COPY@li.116
+|  11.0% | 0.00 | 0.03 |       -- |       -- |     10 | initmt_
+|   8.7% | 0.00 | 0.37 |       -- |     0.00 |    700 | jacobi__clone_1748_1512222151_2_
+|   3.7% | 0.00 | 0.00 |       -- |       -- |      1 | main_.ACC_COPY@li.193
+|   2.8% | 0.00 | 0.01 |     0.00 |     0.00 |     21 | jacobi__clone_1748_1512222151_1_
+|   1.1% | 0.00 | 0.00 |       -- |       -- |      2 | jacobi__clone_1748_1512222151_2_.ACC_COPY@li.178
+|=============================================================================
+
+Program invocation:
+  /apps/common/UES/sandbox/jgp/openacc-training.gitjg/exercises/cray/Himeno_prepared/F_omp_omp/CRAY/./himeno_v03.x
+
+For a complete report with expanded tables and notes, run:
+  pat_report /scratch/snx1600tds/piccinal/himeno/himeno_v03.x+5592-2t
+
+For help identifying callers of particular functions:
+  pat_report -O callers+src /scratch/snx1600tds/piccinal/himeno/himeno_v03.x+5592-2t
+To see the entire call tree:
+  pat_report -O calltree+src /scratch/snx1600tds/piccinal/himeno/himeno_v03.x+5592-2t
+
+For interactive, graphical performance analysis, run:
+  app2 /scratch/snx1600tds/piccinal/himeno/himeno_v03.x+5592-2t
+
+================  End of CrayPat-lite output  ==========================

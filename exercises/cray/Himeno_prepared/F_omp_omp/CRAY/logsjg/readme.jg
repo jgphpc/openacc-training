@@ -1,0 +1,165 @@
+#!/bin/bash
+
+# 2017/12
+# start here: /apps/common/UES/sandbox/jgp/openacc-training.gitjg/slides/2.01_scalar_himeno.pdf
+
+# cce
+
+          ###     ###
+ #    #  #   #   #   #
+ #    # # #   # # #   #
+ #    # #  #  # #  #  #
+ #    # #   # # #   # #
+  #  #   #   #   #   #
+   ##     ###     ###
+module load craype-accel-nvidia60
+mll perftools-base/6.5.2
+mll perftools-lite-loops
+mmc; make VERSION=00 ACC=no OMP=yes
+export PAT_RT_EXPDIR_BASE=$SCRATCH/himeno
+~/sbatch.sh dom 1 ./himeno_v00.x 1 1 1 1 1 "-Cgpu" "" "" "" "" $SCRATCH/himeno/
+
+# -----------------------------------------------------------------
+# !!! do not use perftools-base/6.5.1, use perftools-base/6.5.2 !!!
+# 651:ko
+Table 1:  Inclusive and Exclusive Time in Loops (from -hprofile_generate)
+ Loop Incl |     Loop |     Time |  Loop Hit |  Loop |  Loop |  Loop | Function=/.LOOP[.]
+     Time% |     Incl |    (Loop |           | Trips | Trips | Trips |
+           |     Time |    Adj.) |           |   Avg |   Min |   Max |
+|-----------------------------------------------------------------------------
+| 59,429.1% | 3.568589 | 0.000025 |         2 |  51.5 |     3 |   100 | jacobi_.LOOP.0001.li.280
+
+# 652:ok
+Table 1:  Inclusive and Exclusive Time in Loops (from -hprofile_generate)
+  Loop |     Loop |     Time |  Loop Hit |  Loop |  Loop |  Loop | Function=/.LOOP[.]
+  Incl |     Incl |    (Loop |           | Trips | Trips | Trips |
+ Time% |     Time |    Adj.) |           |   Avg |   Min |   Max |
+|-----------------------------------------------------------------------------
+| 96.0% | 3.643408 | 0.000023 |         2 |  51.5 |     3 |   100 | jacobi_.LOOP.1.li.280
+# -----------------------------------------------------------------
+
+
+          ###      #
+ #    #  #   #    ##
+ #    # # #   #  # #
+ #    # #  #  #    #
+ #    # #   # #    #
+  #  #   #   #     #
+   ##     ###    #####
+mmc; make VERSION=01 ACC=no OMP=yes
+#ftn -DPROBLEM_SIZE=3 -DNTPB=128 -O2 -DDOUBLE_PRECISION -hlist=ad -homp  -xacc -c himeno_F_v01.F90
+#ftn -DPROBLEM_SIZE=3 -DNTPB=128 -O2 -DDOUBLE_PRECISION -hlist=ad -homp  -xacc -o himeno_v01.x himeno_F_v01.o
+
+
+ #####   ######   ####
+ #    #  #       #
+ #    #  #####    ####
+ #####   #            #
+ #   #   #       #    #
+ #    #  ######   ####
+# for i in logsjg/*/effo* ;do echo -n $i ; grep MFLOPS $i |tail -1 ;done |snk 4
+logsjg/v01/effo_himeno_v01.x.1.1.8.8.1.htno-dom. MFLOPS      :  328.88980860968741
+logsjg/v01a/effo_himeno_v01a.x.1.1.8.8.1.htno-dom. MFLOPS      :  355.30778423110212
+logsjg/v00/effo_himeno_v00.x.1.1.1.1.1.htno-dom. MFLOPS      :  3743.2935126973907
+logsjg/v00/effo_himeno_v00.x.1.1.1.1.1.htno-dom.noopenmp MFLOPS      :  3907.3887332460358
+logsjg/v00/effo_himeno_v00.x.1.1.8.8.1.htno-dom.ptl652+loops MFLOPS      :  3964.4525654808831
+logsjg/v00/effo_himeno_v00.x.1.1.2.2.1.htno-dom. MFLOPS      :  6838.2587238884089
+logsjg/v00/effo_himeno_v00.x.1.1.3.3.1.htno-dom. MFLOPS      :  9476.6575304971502
+logsjg/v00/effo_himeno_v00.x.1.1.13.13.2.hton-dom. MFLOPS      :  10093.246960424021
+logsjg/v00/effo_himeno_v00.x.1.1.14.14.2.hton-dom. MFLOPS      :  10578.004484988527
+logsjg/v00/effo_himeno_v00.x.1.1.15.15.2.hton-dom. MFLOPS      :  10617.539342942466
+logsjg/v00/effo_himeno_v00.x.1.1.23.23.2.hton-dom. MFLOPS      :  10782.738099608132
+logsjg/v00/effo_himeno_v00.x.1.1.17.17.2.hton-dom. MFLOPS      :  11044.373310084226
+logsjg/v00/effo_himeno_v00.x.1.1.16.16.2.hton-dom. MFLOPS      :  11112.714224274116
+logsjg/v00/effo_himeno_v00.x.1.1.4.4.1.htno-dom. MFLOPS      :  11192.67608230001
+logsjg/v00/effo_himeno_v00.x.1.1.19.19.2.hton-dom. MFLOPS      :  11469.521711273013
+logsjg/v00/effo_himeno_v00.x.1.1.20.20.2.hton-dom. MFLOPS      :  11487.558714744582
+logsjg/v00/effo_himeno_v00.x.1.1.18.18.2.hton-dom. MFLOPS      :  11524.684586256964
+logsjg/v02/effo_himeno_v02.x.1.1.8.8.1.htno-dom. MFLOPS      :  11603.188203751226
+logsjg/v00/effo_himeno_v00.x.1.1.21.21.2.hton-dom. MFLOPS      :  11835.392276592958
+logsjg/v00/effo_himeno_v00.x.1.1.24.24.2.hton-dom. MFLOPS      :  11865.43462415646
+logsjg/v00/effo_himeno_v00.x.1.1.22.22.2.hton-dom. MFLOPS      :  11894.191596115439
+logsjg/v00/effo_himeno_v00.x.1.1.5.5.1.htno-dom. MFLOPS      :  12094.883002444649
+logsjg/v00/effo_himeno_v00.x.1.1.12.12.1.htno-dom. MFLOPS      :  12580.39579412407
+logsjg/v00/effo_himeno_v00.x.1.1.11.11.1.htno-dom. MFLOPS      :  12613.622096862842
+logsjg/v00/effo_himeno_v00.x.1.1.10.10.1.htno-dom. MFLOPS      :  12740.992616029573
+logsjg/v00/effo_himeno_v00.x.1.1.6.6.1.htno-dom. MFLOPS      :  12791.634126496345
+logsjg/v00/effo_himeno_v00.x.1.1.9.9.1.htno-dom. MFLOPS      :  12840.549220060906
+logsjg/v00/effo_himeno_v00.x.1.1.8.8.1.htno-dom. MFLOPS      :  12944.92466167356
+logsjg/v00/effo_himeno_v00.x.1.1.7.7.1.htno-dom. MFLOPS      :  12976.955304255733
+logsjg/v02/effo_himeno_v02.x.1.1.1.1.1.htno-dom. MFLOPS      :  72721.337994378788
+logsjg/v03/effo_himeno_v03.x.1.1.1.1.1.htno-dom. MFLOPS      :  96013.303855209189
+
+export CRAY_ACC_DEBUG=2
+for i in himeno_v0* ;do ~/sbatch.sh dom 1 ./$i 1 1 1 1 1 "-Cgpu" "" "" "" "" $SCRATCH/himeno/ ;done
+
+#grep 'ACC: End transfer' logsjg/CRAY_ACC_DEBUG/effo_himeno_v03.x.1.1.1.1.1.htno-dom.CRAY_ACC_DEBUG\=2 |snk 6|tail -5
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: End transfer (to acc 4 bytes, to host 0 bytes)
+
+#grep 'ACC: End transfer' effo_himeno_v02.x.1.1.1.1.1.htno-dom.  |snk 6 |tail -5
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: End transfer (to acc 0 bytes, to host 8 bytes)
+ACC: End transfer (to acc 4 bytes, to host 0 bytes)
+ACC: End transfer (to acc 444780648 bytes, to host 0 bytes)
+ACC: End transfer (to acc 444780648 bytes, to host 0 bytes)
+
+#grep 'ACC: End transfer' effo_himeno_v01a.x.1.1.1.1.1.htno-dom.  |snk 6 |tail -5
+ACC: End transfer (to acc 444780648 bytes, to host 0 bytes)
+ACC: End transfer (to acc 444780648 bytes, to host 0 bytes)
+ACC: End transfer (to acc 444780648 bytes, to host 0 bytes)
+ACC: End transfer (to acc 444780648 bytes, to host 0 bytes)
+ACC: End transfer (to acc 444780652 bytes, to host 0 bytes)
+
+#grep 'ACC: End transfer' effo_himeno_v01.x.1.1.1.1.1.htno-dom.  |snk 6 |tail -5
+ACC: End transfer (to acc 478994544 bytes, to host 0 bytes) = 456MB
+ACC: End transfer (to acc 478994544 bytes, to host 0 bytes)
+ACC: End transfer (to acc 478994544 bytes, to host 0 bytes)
+ACC: End transfer (to acc 478994544 bytes, to host 0 bytes)
+ACC: End transfer (to acc 478994548 bytes, to host 0 bytes)
+
+
+
+
+
+
+                         #####  #######  #####
+ #####    #####  #      #     # #       #     #           ####   #####   #    #
+ #    #     #    #      #       #             #          #    #  #    #  #    #
+ #    #     #    #      ######   #####   #####   #####   #       #    #  #    #
+ #####      #    #      #     #       # #                #  ###  #####   #    #
+ #          #    #      #     # #     # #                #    #  #       #    #
+ #          #    ######  #####   #####  #######           ####   #        ####
+# Table 1:  Accelerator Table by Function (top 10 functions shown)
+#    Host | Host |  Acc | Acc Copy | Acc Copy | Events | Function=[max10]
+#   Time% | Time | Time |       In |      Out |        |  PE=HIDE
+#         |      |      | (MBytes) | (MBytes) |        |   Thread=HIDE
+# for i in effo_himeno_v0*.x.1.1.1.1.1.htno-dom.;do e $i;grep jacobi__clone $i ;e;done
+effo_himeno_v01.x.1.1.1.1.1.htno-dom.
+|  56.7% | 0.01 | 5.24 |   45,680 |    3,263 |    500 | jacobi__clone_145169_1512221461_2_
+|  43.3% | 0.00 | 0.18 |    1,370 |    97.89 |     15 | jacobi__clone_145169_1512221461_1_
+
+effo_himeno_v01a.x.1.1.1.1.1.htno-dom.
+|  59.9% | 0.01 | 4.87 |   42,418 |    3,263 |    500 | jacobi__clone_145373_1512221463_2_
+|  40.1% | 0.00 | 0.16 |    1,273 |    97.89 |     15 | jacobi__clone_145373_1512221463_1_
+
+effo_himeno_v02.x.1.1.1.1.1.htno-dom.
+|  54.3% | 0.00 | 0.05 |   424.18 |    32.63 |      2 | jacobi__clone_145550_1512221464_1_.ACC_COPY@li.157
+|  23.7% | 0.00 | 0.01 |     0.00 |     0.00 |     21 | jacobi__clone_145550_1512221464_1_
+|  13.5% | 0.00 | 0.14 |       -- |     0.00 |    700 | jacobi__clone_145550_1512221464_2_
+|   7.5% | 0.00 |   -- |       -- |       -- |      1 | jacobi__clone_145550_1512221464_1_.ACC_DATA_REGION@li.157
+
+effo_himeno_v02a.x.1.1.1.1.1.htno-dom.
+|  51.1% | 0.00 | 0.05 |   424.18 |    32.63 |      2 | jacobi__clone_145727_1512221466_1_.ACC_COPY@li.157
+|  25.0% | 0.00 | 0.01 |     0.00 |     0.00 |     21 | jacobi__clone_145727_1512221466_1_
+|  16.2% | 0.00 | 0.14 |       -- |     0.00 |    700 | jacobi__clone_145727_1512221466_2_
+|   6.5% | 0.00 |   -- |       -- |       -- |      1 | jacobi__clone_145727_1512221466_1_.ACC_DATA_REGION@li.157
+|   1.0% | 0.00 | 0.05 |   424.18 |    32.63 |      2 | jacobi__clone_145727_1512221466_2_.ACC_COPY@li.178
+
+effo_himeno_v03.x.1.1.1.1.1.htno-dom.
+|   8.9% | 0.00 | 0.14 |       -- |     0.00 |    700 | jacobi__clone_146578_1512221716_2_
+|   3.3% | 0.00 | 0.00 |     0.00 |     0.00 |     21 | jacobi__clone_146578_1512221716_1_
+|   1.5% | 0.00 | 0.00 |       -- |       -- |      2 | jacobi__clone_146578_1512221716_2_.ACC_COPY@li.178

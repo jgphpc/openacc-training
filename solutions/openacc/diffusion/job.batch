@@ -5,7 +5,6 @@
 #SBATCH --time=00:10:00
 #SBATCH --output=job.out
 #SBATCH --constraint=gpu
-#SBATCH --partition=normal
 ##SBATCH --reservation=open
 ##SBATCH --account=courses
 
